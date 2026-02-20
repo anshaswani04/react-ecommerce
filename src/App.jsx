@@ -1,6 +1,9 @@
+import Navbar from "./components/Navbar"
+
 function App() {
   return (
     <div>
+      <Navbar />
       <h1>Welcome to My Ecommerce Store! 🛒</h1>
     </div>
   )
