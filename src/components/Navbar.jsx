@@ -1,21 +1,23 @@
-import { useState } from "react"    
-    
-    
-    function Navbar() {
-        const [cartCount, setCartCount] = useState(0)
-    return (
-        <nav className="navbar">
-            <div className="navbar-logo">
-                <h1>My Ecommerce Store</h1>
-            </div>
-            <div className="navbar-links">
-                <a href="/">Home</a>
-                <a href="/products">Products</a>
-                <a href="/cart" className="cart-link">Cart 🛒<span className="cart-count">{cartCount}</span></a>
-                <a href="/contact">Contact</a>
-            </div>
-        </nav>
-    )
-    }
+function Navbar({ cartCount, setCurrentPage }) {
+  return (
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <h1
+          onClick={() => setCurrentPage('home')}
+          style={{ cursor: 'pointer' }}
+        >
+          🛒 ShopReact
+        </h1>
+      </div>
+      <div className="navbar-links">
+        <a onClick={() => setCurrentPage('home')} href="#">Home</a>
+        <a onClick={() => setCurrentPage('admin')} href="#">Admin</a>
+        <a href="#" className="cart-link">
+          Cart 🛒 <span className="cart-count">{cartCount}</span>
+        </a>
+      </div>
+    </nav>
+  )
+}
 
 export default Navbar
